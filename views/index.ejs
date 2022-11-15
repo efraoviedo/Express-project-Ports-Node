@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body> 
+    <div class="board">
+    <a href="/new">New  Short message</a>
+    <h1><%=title%></h1>
+    <ul>
+      <% for(const msg of messages) {%>
+      <li>
+        <div><sub><%=format(msg.added, {addSuffix: true})%></sub></div>
+        <div><strong><%=msg.user%></strong></div>
+        <%=msg.text%>
+      </li>
+      <% } %>
+    </div>
+    </ul>
+  </body>
+</html>
